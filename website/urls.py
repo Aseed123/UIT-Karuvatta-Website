@@ -22,4 +22,16 @@ from uit_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",views.IndexView.as_view(),name="index"),
+    path("about/",views.AboutView.as_view(),name="about"),
+    path("courses/bsc_cs/",views.BscComputerScienceView.as_view(),name="bsc-cs"),
+    path("courses/bsc_cs/",views.BscComputerScienceView.as_view(),name="bsc-cs"),
+    path("infastructures/lab/",views.ComputerLabView.as_view(),name="lab"),
+    path("courses/bca_cs",views.BcaComputerScienceView.as_view(),name="bca"),
+    path("courses/bcom_ap",views.BcomFinanceView.as_view(),name="bcom-finance"),
+    path("courses/bcom_tax",views.BcomCooperationView.as_view(),name="bcom-cop"),
+
+    path("other_staffs/",views.OtherStaffsView.as_view(),name="other-staffs"),
+    path("achievements/",views.AchievementsView.as_view(),name="achievements"),
+    path("clubs/",views.ClubsView.as_view(),name="clubs"),
+    path("nss/",views.NssView.as_view(),name="nss"),
 ]

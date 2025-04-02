@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block title %} NSS {% endblock %}
+
+{% block main_block %}
+<!-- NSS Section Start -->
+<section class="nss_section py-5">
+    <div class="container">
+        <!-- Page Title -->
+        <h2 class="text-center mb-5" style="color: #007bff; font-weight: bold;">National Service Scheme (NSS)</h2>
+
+        <!-- Introduction Row -->
+        <div class="row gy-4">
+            <!-- Text Column -->
+            <div class="col-lg-6 order-2 order-lg-1">
+                <h3>About NSS</h3>
+                <p style="color: #555; line-height: 1.8;">
+                    The National Service Scheme (NSS) at UIT College is a vibrant platform for students to contribute towards societal welfare. NSS aims at developing students' personalities through community service, fostering a sense of social responsibility, and instilling leadership qualities.
+                </p>
+                <p style="color: #555; line-height: 1.8;">
+                    NSS volunteers actively participate in activities such as community clean-ups, awareness campaigns, and blood donation drives, making a positive impact on society.
+                </p>
+                <ul style="list-style-type: disc; padding-left: 20px; color: #555;">
+                    <li>Focus on social service and personality development</li>
+                    <li>Active involvement in community welfare programs</li>
+                    <li>Opportunities to lead and collaborate with peers</li>
+                </ul>
+            </div>
+            <!-- Image Column -->
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="{%static 'img/nss.jpg'%}" class="img-fluid rounded shadow" alt="NSS Banner" style="max-width: 100%; height: auto;">
+            </div>
+        </div>
+
+        <!-- Activities Section -->
+        <div class="mt-5">
+            <h3 class="text-center mb-4" style="color: #007bff; font-weight: bold;">NSS Activities</h3>
+            <div class="row gy-4">
+                <!-- Activity 1 -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm h-100">
+                        <img src="{%static 'images/events/my_bhart.jpg'%}" class="card-img-top" alt="Cleanliness Drive">
+                        <div class="card-body">
+                            <h5 class="card-title">Cleanliness Drive</h5>
+                            <p class="card-text">
+                                NSS volunteers actively organize campus and community clean-up campaigns to promote hygiene and cleanliness.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Activity 2 -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm h-100">
+                        <img src="{%static 'images/events/environmental_day.jpg'%}" class="card-img-top" alt="Blood Donation Camp">
+                        <div class="card-body">
+                            <h5 class="card-title">Enviromental Day </h5>
+                            <p class="card-text">
+                                "On Environmental Day, our college hosts a tree-planting drive to foster sustainability and green initiatives."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Activity 3 -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm h-100">
+                        <img src="" class="card-img-top" alt="Awareness Campaigns">
+                        <div class="card-body">
+                            <h5 class="card-title">Awareness Campaigns</h5>
+                            <p class="card-text">
+                                Campaigns on health, education, and environment are organized to educate and empower the community.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="mt-5">
+            <h3 class="text-center mb-4" style="color: #007bff; font-weight: bold;">Contact NSS Coordinator</h3>
+            <div class="text-center">
+                <p><strong>Coordinator:</strong> Mr. Rahul R</p>
+                <p><strong>Email:</strong> rahul.nss@uitcollege.edu</p>
+                <p><strong>Phone:</strong> +91 9876543210</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- NSS Section End -->
+{% endblock %}

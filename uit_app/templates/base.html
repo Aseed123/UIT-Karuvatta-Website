@@ -14,16 +14,42 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
 
     <!-- Libraries Stylesheet -->
     <link href="{%static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{%static 'css/style.css'%}" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <style>
+        /* Zoom-in effect for the image */
+        .zoom-effect {
+            animation: zoomIn 8s ease-in-out infinite;
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.10);
+                /* Slight zoom */
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -42,20 +68,20 @@
                         <h6 class="font-weight-semi-bold mb-1">Location</h6>
 
                         <small>
-                        <a href="" style="color: #023e8a;">    TB Junction Karuvatta P.O, Harippad
+                            <a href="https://maps.app.goo.gl/tfMF7eyoi78cwoA4A" style="color: #023e8a;"> TB Junction Karuvatta P.O, Harippad
                                 Alappuzha 690517
-                        </a>
+                            </a>
                         </small>
 
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 text-right">   
+            <div class="col-lg-3 text-right">
                 <div class="d-inline-flex align-items-center">
                     <i class="fa fa-2x fa-envelope text-primary mr-3"></i>
                     <div class="text-left">
                         <h6 class="font-weight-semi-bold mb-1">Email Us</h6>
-                        <small>uitkaruvatta@gmail.com</small>
+                        <small><a href="mailto:uitkaruvatta@gmail.com" style="color: #023e8a;">uitkaruvatta@gmail.com</a></small>
                     </div>
                 </div>
             </div>
@@ -64,7 +90,8 @@
                     <i class="fa fa-2x fa-phone text-primary mr-3"></i>
                     <div class="text-left">
                         <h6 class="font-weight-semi-bold mb-1">Call Us</h6>
-                        <small>0479-2493366</small>
+                        <small><a href="tel:+04792493366" style="color: #023e8a;">0479-2493366</a></small>
+
                     </div>
                 </div>
             </div>
@@ -76,65 +103,217 @@
     <!-- Navbar Start -->
     <div class="container-fluid">
         <div class="row border-top px-xl-5">
-            <div class="col-lg-3 d-none d-lg-block">
-                <a class="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none" data-toggle="collapse" href="#navbar-vertical" style="height: 67px; padding: 0 30px;">
+            <!-- <div class="col-lg-3 d-none d-lg-block">
+                <a class="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none"
+                    data-toggle="collapse" href="#navbar-vertical" style="height: 67px; padding: 0 30px;">
                     <h5 class="text-primary m-0"><i class="fa fa-book-open mr-2"></i>Courses</h5>
                     <i class="fa fa-angle-down text-primary"></i>
                 </a>
-                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 9;">
+                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light"
+                    id="navbar-vertical" style="width: calc(100% - 30px); z-index: 9;">
                     <div class="navbar-nav w-100">
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown">UG Courses <i class="fa fa-angle-down float-right mt-1"></i></a>
-                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">BSc Computer Science</a>
-                                <a href="" class="dropdown-item">BCA Computer Application</a>
-                                <a href="" class="dropdown-item">B Com Computer Application</a>
-                                <a href="" class="dropdown-item">B Com Tax</a>
-                            </div>
-                        </div>
-
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown">PG Courses <i class="fa fa-angle-down float-right mt-1"></i></a>
-                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">M Com Finance</a>
-                            </div>
-                        </div>
+                        <a href="{% url 'bsc-cs' %}" class="nav-link">BSc Computer Science</a>
+                        <a href="{% url 'bca' %}" class="nav-link">BCA Computer Application</a>
+                        <a href="{%url 'bcom-cop'%}" class="nav-link">B Com Co-Operation</a>
+                        <a href="{%url 'bcom-finance'%}" class="nav-link">B Com Finance</a>
                     </div>
                 </nav>
-            </div>
-            <div class="col-lg-9">
-                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-                    <a href="" class="text-decoration-none d-block d-lg-none">
-                        <img src="svg.svg" alt="Logo" style="max-width: 15rem;" class="ms-10">
+            </div> -->
+
+
+
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light py-lg-0 py-3 px-0">
+                    <!-- Increased height here -->
+                    <!-- Mobile Logo -->
+                    <a href="#" class="text-decoration-none d-block d-lg-none">
+                        <img src="{% static 'images/college/svg.svg' %}" alt="Logo" style="max-width: 10rem;"
+                            class="ms-2">
                     </a>
-                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <!-- Mobile Toggle Button -->
+                    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                        aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+
+                    <style>
+                        /* Base style for the custom toggle button */
+                        .custom-toggler {
+                            border: none;
+                            /* Remove default border */
+                            background-color: #021526;
+                            /* Dark background */
+                            border-radius: 50%;
+                            /* Make the button circular */
+                            padding: 10px;
+                            /* Adjust padding to make the button round */
+                            width: 40px;
+                            /* Set width for circular shape */
+                            height: 40px;
+                            /* Set height for circular shape */
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            transition: background-color 0.3s, transform 0.3s;
+                            /* Smooth transition */
+                        }
+
+                        /* Customize the navbar-toggler icon */
+                        .custom-toggler .navbar-toggler-icon {
+                            background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+                            width: 20px;
+                            /* Set width for the icon */
+                            height: 20px;
+                            /* Set height for the icon */
+                        }
+
+                        /* Hover effect for the toggle button */
+                        .custom-toggler:hover {
+                            background-color: #f39c12;
+                            /* Change to a vibrant gold color on hover */
+                            transform: scale(1.1);
+                            /* Slight zoom effect */
+                        }
+
+                        /* Active state effect */
+                        .custom-toggler:active {
+                            background-color: #e67e22;
+                            /* Slightly darker shade for active state */
+                            transform: scale(0.95);
+                            /* Slight shrinking effect */
+                        }
+                    </style>
+                    <!-- Navbar Links -->
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                         <div class="navbar-nav py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="about.html" class="nav-item nav-link">About</a>
+                            <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+                            <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Infrastructure</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                                    aria-expanded="false">Courses</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="blog.html" class="dropdown-item">Library</a>
-                                    <a href="single.html" class="dropdown-item">Computer Lab</a>
+                                    <a href="{% url 'bsc-cs' %}" class="dropdown-item">BSc Computer Science</a>
+                                    <a href="{% url 'bca' %}" class="dropdown-item">BCA Computer Apllications</a>
+                                    <a href="{% url 'bcom-finance' %}" class="dropdown-item">BCom Finance</a>
+                                    <a href="{% url 'bcom-cop' %}" class="dropdown-item">BCom Co-Operation</a>
                                 </div>
                             </div>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Departments</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                                    aria-expanded="false">Facilities</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="blog.html" class="dropdown-item">Computer Science</a>
-                                    <a href="single.html" class="dropdown-item">Commerce</a>
+                                    <a href="{% url 'lab' %}" class="dropdown-item">Computer Lab</a>
+                                    <a href="{% url 'lab' %}" class="dropdown-item">Electronics Lab</a>
+                                    <a href="#" class="dropdown-item">Library</a>
+                                    <a href="#" class="dropdown-item">Scholarship and Grant</a>
                                 </div>
                             </div>
-                            <a href="teacher.html" class="nav-item nav-link">Teachers</a>
-                            <a href="contact.html" class="nav-item nav-link">Achievements</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                                    aria-expanded="false">Departments</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="blog.html" class="dropdown-item">Dept of Computer Science</a>
+                                    <a href="single.html" class="dropdown-item">Dept of Commerce</a>
+                                    <a href="single.html" class="dropdown-item">Dept of Mathematics</a>
+                                    <a href="single.html" class="dropdown-item">Dept of Malayalam</a>
+                                    <a href="single.html" class="dropdown-item">Dept of Hindi</a>
+                                </div>
+                            </div>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                                    aria-expanded="false">Extensions</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="{%url 'nss'%}" class="dropdown-item">National Service Scheme</a>
+                                    <a href="single.html" class="dropdown-item">Parent Teacher Association</a>
+                                    <a href="{%url 'clubs'%}" class="dropdown-item">Clubs</a>
+                                </div>
+                            </div>
+                            <a href="{% url 'other-staffs' %}" class="nav-item nav-link">Other Staffs</a>
+                            <a href="{% url 'achievements' %}" class="nav-item nav-link">Achievements</a>
                         </div>
-                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="https://admissions.keralauniversity.ac.in/">Admissions</a>
                     </div>
+                    <style>
+                        .navbar-nav .nav-link:hover {
+                            color: #de7a0b !important;
+                        }
+
+                        /* Add a background color and styled border to the dropdown menu */
+                        .navbar .dropdown-menu {
+                            background-color: #ffffff;
+                            /* White background */
+                            border: 2px solid transparent;
+                            /* Transparent border initially */
+                            border-image: linear-gradient(to right, #ffc107, #007bff);
+                            /* Gradient border */
+                            border-image-slice: 1;
+                            /* Use the entire gradient */
+                            border-radius: 8px;
+                            /* Rounded corners */
+                            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                            /* Subtle shadow */
+                            opacity: 0;
+                            /* Initially hidden */
+                            visibility: hidden;
+                            /* Initially hidden */
+                            transition: opacity 0.3s ease, visibility 0s 0.3s, transform 0.3s ease;
+                            /* Smooth transitions */
+                            transform: translateY(-10px);
+                            /* Slightly offset for animation */
+                        }
+
+                        /* Hover effect for dropdown items */
+                        .navbar .dropdown-item {
+                            padding: 5px 15px;
+                            /* Add padding */
+                            transition: background-color 0.3s ease, color 0.3s ease;
+                            /* Smooth hover effect */
+                        }
+
+                        .navbar .dropdown-item:hover {
+                            background-color: #021526;
+                            /* Yellow background on hover */
+                            color: #ffffff;
+                            /* White text */
+                        }
+
+                        /* Show the dropdown when hovering over the parent dropdown */
+                        .navbar .dropdown:hover .dropdown-menu {
+                            opacity: 1;
+                            /* Fully visible */
+                            visibility: visible;
+                            /* Make visible */
+                            transform: translateY(0);
+                            /* Slide down into place */
+                            transition-delay: 0s;
+                            /* No delay when showing */
+                        }
+
+                        /* Add hover effect to dropdown toggle links */
+                        .navbar .dropdown-toggle:hover {
+                            color: #ffc107;
+                            /* Yellow color on hover */
+                            text-decoration: none;
+                        }
+
+                        /* Add a custom border hover effect to the dropdown menu */
+                        .navbar .dropdown:hover .dropdown-menu {
+                            border-color: #021526;
+                            /* Yellow border on hover */
+                        }
+                    </style>
+
+
+
+                    <!-- Admissions Button (Only visible on large screens) -->
+                    <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block"
+                        href="https://admissions.keralauniversity.ac.in/fyugpHome.php">Admissions</a>
                 </nav>
             </div>
+
+
+
+
         </div>
     </div>
     <!-- Navbar End -->
@@ -145,69 +324,97 @@
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
+    <div class="container-fluid text-white py-5 px-sm-3 px-lg-5" style="margin-top: 90px; background-color: #021526;">
+        <style>
+            .footer-link {
+                text-decoration: none !important;
+                color: #ffffff !important;
+                transition: color 0.3s;
+            }
+
+            .footer-link:hover {
+                color: #f39c12 !important;
+            }
+
+            .footer-social .btn {
+                border-color: #ffffff !important;
+                color: #ffffff !important;
+                transition: all 0.3s;
+            }
+
+            .footer-social .btn:hover {
+                background-color: #f39c12 !important;
+                border-color: #f39c12 !important;
+                color: #021526 !important;
+            }
+        </style>
         <div class="row pt-5">
             <div class="col-lg-8 col-md-12">
                 <div class="row">
                     <div class="col-md-4 mb-5">
-                        <!-- <h5 class=" text-uppercase mb-4" style="letter-spacing: 5px; color: rgb(255, 81, 0);">CONTACT US</h5> -->
-                        <img src="{%static 'images\college\svg.svg'%}" alt="Logo" style="max-width: 15rem;" class="ms-10 mb-3">
-                        <p><i class="fa fa-map-marker-alt mr-2"></i>TB Junction Karuvatta P.O, Harippad Alappuzha 690517</p>
+                        <img src="{% static 'images/college/veli.png' %}" alt="Logo" style="max-width: 15rem;"
+                            class="ms-10 mb-3">
+                        <p><i class="fa fa-map-marker-alt mr-2"></i>TB Junction, Karuvatta P.O, Harippad, Alappuzha
+                            690517</p>
                         <p><i class="fa fa-phone-alt mr-2"></i>0479-2493366</p>
                         <p><i class="fa fa-envelope mr-2"></i>uitkaruvatta@gmail.com</p>
-                        <div class="d-flex justify-content-start mt-4">
+                        <div class="footer-social d-flex mt-4">
                             <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-square mr-2" href="https://www.facebook.com/UniversityInstituteOfTechnologyKaruvatta/"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-square mr-2" href="#"><i
+                                    class="fab fa-linkedin-in"></i></a>
                             <a class="btn btn-outline-light btn-square" href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
-                        <h5 class="text-uppercase mb-4" style="letter-spacing: 5px;color: rgb(255, 81, 0);">Our Courses</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>BSc Computer Science</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>B Com Computer Application</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>B Com Taxation</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>BCA Computer Applications</a>
-                            <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>M Com Finance</a>
+                        <h5 class="text-uppercase mb-4" style="letter-spacing: 5px; color: #f39c12;">Our Courses</h5>
+                        <div class="d-flex flex-column">
+                            <a class="footer-link mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>BSc Computer
+                                Science</a>
+                            <a class="footer-link mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>B Com Computer
+                                Application</a>
+                            <a class="footer-link mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>B Com
+                                Taxation</a>
+                            <a class="footer-link mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>BCA Computer
+                                Applications</a>
+                            <a class="footer-link" href="#"><i class="fa fa-angle-right mr-2"></i>M Com Finance</a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
-                        <h5 class="text-uppercase mb-4" style="letter-spacing: 5px;color: rgb(255, 81, 0);">Departments</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Dept of Computer Science</a>
-                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Dept of Commerce</a>
-
+                        <h5 class="text-uppercase mb-4" style="letter-spacing: 5px; color: #f39c12;">Departments</h5>
+                        <div class="d-flex flex-column">
+                            <a class="footer-link mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Dept of Computer
+                                Science</a>
+                            <a class="footer-link mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Dept of
+                                Commerce</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-12 mb-5">
-                <h5 class="text-uppercase mb-4" style="letter-spacing: 5px;color: rgb(255, 81, 0);">LOCATION</h5>
+                <h5 class="text-uppercase mb-4" style="letter-spacing: 5px; color: #f39c12;">Location</h5>
                 <div style="width: 100%; height: 200px;">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3937.214547135143!2d76.4299407!3d9.314248899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b089fbf18e800cd%3A0xe4145184522d8fbb!2sUIT%20Karuvatta!5e0!3m2!1sen!2sin!4v1734939606933!5m2!1sen!2sin"
-                      width="100%"
-                      height="300"
-                      style="border:0;"
-                      allowfullscreen=""
-                      loading="lazy"
-                      referrerpolicy="no-referrer-when-downgrade">
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3937.214547135143!2d76.4299407!3d9.314248899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b089fbf18e800cd%3A0xe4145184522d8fbb!2sUIT%20Karuvatta!5e0!3m2!1sen!2sin!4v1734939606933!5m2!1sen!2sin"
+                        width="100%" height="250" style="border:0; border-radius: 10px; " allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
-                  </div>
-                  
+
+                </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5 " style="border-color: rgba(256, 256, 256, .1) !important;">
+    <div class="container-fluid text-white border-top py-4 px-sm-3 px-md-5" style="background-color: #000;">
         <div class="row justify-content-center">
-            <div class="col-lg-6 text-center mb-3 mb-md-0">
-                <p class="m-0 text-white">Copyright &copy;2024 UIT Karuvatta Designed by <a href="https://htmlcodex.com">2021 Batch Students</a>
-                </p>
+            <div class="col-lg-6 text-center">
+                <p class="m-0 text-white">Copyright &copy; 2024 <span style="color: #f39c12;">UIT Karuvatta</span> |
+                    Designed by <a href="#" class="footer-link">2021 Batch Students</a></p>
             </div>
         </div>
     </div>
     <!-- Footer End -->
+
 
 
     <!-- Back to Top -->
@@ -227,5 +434,10 @@
     <!-- Template Javascript -->
     <script src="{%static 'js\main.js'%}"></script>
 </body>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 
 </html>

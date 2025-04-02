@@ -11,24 +11,27 @@
         <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" style="min-height: 300px;">
-                    <img class="position-relative w-100" src="{%static 'images/college/uni2.jpg'%}" style="min-height: 300px; object-fit: cover;">
+                    <img class="position-relative w-100 zoom-effect" src="{% static 'images/college/karu.jpg' %}" 
+                         style="min-height: 300px; object-fit: cover;">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <div class="p-5" style="width: 100%; max-width: 900px;">
-                            <img src="{%static 'images\college\logo2.png'%}" alt="" style="width: 20%; margin-left: 40%; " class="">
-                            <h5 class="text-white text-uppercase mb-md-3">Affiliated to Kerala University</h5>
-                            
-                            <h1 class="display-6 text-white mb-md-4">University Institute of Technology, Karuvatta</h1>
+                            <img src="{% static 'images/college/uni_gif.gif' %}" alt="" 
+     style="width: 20%; margin-left: 0;" class="zoom-container">
+
+                            <h5 class="text-white text-uppercase mb-md-3"data-aos="fade-right" data-aos-duration="2000">Affiliated to Kerala University</h5>
+                            <h1 class="display-6 text-white mb-md-4"data-aos="fade-right" data-aos-duration="2000">University Institute of Technology, Karuvatta</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <!-- Carousel End -->
 
 
     <!-- About Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid ">
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-5">
@@ -135,7 +138,7 @@
 
 
     <!-- Courses Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid  py-5">
         <div class="container py-5">
             <div class="text-center mb-5">
                 <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Courses</h5>
@@ -150,7 +153,7 @@
                                 <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
                                 <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>Full-Time</small>
                             </div>
-                            <a class="h5" href="">BSc Computer Science</a>
+                            <a class="h5" href="{%url 'bsc-cs'%}">BSc Computer Science</a>
                             <div class="h-6">UG Program</div>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
@@ -169,7 +172,7 @@
                                 <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
                                 <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>Full-Time</small>
                             </div>
-                            <a class="h5" href="">B Com Computer Application</a>
+                            <a class="h5" href="{%url 'bcom-finance'%}">B Com Finance</a>
                             <div class="h-6">UG Program</div>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
@@ -188,7 +191,7 @@
                                 <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
                                 <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>Full-Time</small>
                             </div>
-                            <a class="h5" href="">B Com Taxation</a>
+                            <a class="h5" href="{%url 'bcom-cop'%}">B Com Co-Operation</a>
                             <div class="h-6">UG Program</div>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
@@ -201,13 +204,13 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="rounded overflow-hidden mb-2">
-                        <img class="img-fluid" src="{%static 'images\courses\bca.png'%}" alt="">
+                        <img class="img-fluid" src="{%static 'images\courses\bca1.png'%}" alt="">
                         <div class="bg-secondary p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-users text-primary mr-2"></i>25 Students</small>
                                 <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>Full-Time</small>
                             </div>
-                            <a class="h5" href="">BCA Computer Applications</a>
+                            <a class="h5" href="{%url 'bca'%}">BCA Computer Applications</a>
                             <div class="h-6">UG Program</div>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
@@ -218,7 +221,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mb-4">
+                <!-- <div class="col-lg-4 col-md-6 mb-4">
                     <div class="rounded overflow-hidden mb-2">
                         <img class="img-fluid" src="{%static 'images\courses\m-com.png'%}" alt="">
                         <div class="bg-secondary p-4">
@@ -236,7 +239,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
